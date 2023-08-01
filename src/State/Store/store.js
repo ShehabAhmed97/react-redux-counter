@@ -1,6 +1,12 @@
-import { createStore } from "redux";
-import { rootReducer } from "../Reducers/rootReducer";
+import { configureStore } from "@reduxjs/toolkit";
+import UsersSlice from "../Slices/Users.slice";
+import ProductsSlice from "../Slices/Products.slice";
 
-const store = createStore(rootReducer);
+const store = configureStore({
+  reducer: {
+    users: UsersSlice,
+    products: ProductsSlice,
+  },
+});
 
 export default store;
